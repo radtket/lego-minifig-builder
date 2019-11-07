@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import { Button, Fieldset, Legend } from "./FormElements";
@@ -27,12 +27,27 @@ const inputConfig = {
     min: 0,
     step: 100,
   },
+  hue: {
+    max: 360,
+    min: 0,
+  },
+  saturation: {
+    max: 100,
+    min: 0,
+  },
+  lightness: {
+    max: 90,
+    min: 0,
+  },
 };
 
-const Sidebar = () => {
-  const [values, setValues] = useState({
-    expression: 0,
-  });
+const Sidebar = ({ values, setValues }) => {
+  const onChange = ({ target: { name, value } }) => {
+    setValues(prev => ({
+      ...prev,
+      [name]: parseInt(value, 10),
+    }));
+  };
 
   return (
     <Controls>
@@ -45,25 +60,43 @@ const Sidebar = () => {
           id="expression"
           inputProps={{
             ...inputConfig.expression,
-            value: 0,
+            value: values.expression,
+            onChange,
           }}
           label="Expression"
         />
       </Fieldset>
-      {/*
+
       <Fieldset>
         <Legend>Upper Body</Legend>
         <InputSlider
-          id="upper-hue"
+          id="upperHue"
           inputProps={{
-            max: 360,
-            min: 0,
-            step: 100,
-            value: 200,
+            ...inputConfig.hue,
+            value: values.upperHue,
+            onChange,
           }}
           label="Hue"
         />
-      </Fieldset> */}
+        <InputSlider
+          id="upperSaturation"
+          inputProps={{
+            ...inputConfig.saturation,
+            value: values.upperSaturation,
+            onChange,
+          }}
+          label="Saturation"
+        />
+        <InputSlider
+          id="upperLightness"
+          inputProps={{
+            ...inputConfig.lightness,
+            value: values.upperLightness,
+            onChange,
+          }}
+          label="Saturation"
+        />
+      </Fieldset>
     </Controls>
   );
 };
