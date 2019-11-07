@@ -17,8 +17,6 @@ export default createGlobalStyle`
 	}
 
 	body {
-		display: flex;
 		font-family: Montserrat, sans-serif;
-		height: 100vh;
 	}
 `;

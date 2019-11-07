@@ -1,8 +1,25 @@
 import React from "react";
+import styled from "styled-components";
+
+import { UpperBody, Torso, RightArm, LeftArm, Hand } from "./UpperBody";
+
+const MiniFigure = styled.div`
+  height: 485px;
+  margin: auto;
+  perspective: 200;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 400ms;
+  width: 300px;
+
+  &.explode {
+    transform: scale(0.75) translateZ(0);
+  }
+`;
 
 const MiniFig = () => {
   return (
-    <div className="minifigure">
+    <MiniFigure>
       <div className="head">
         <div className="faces-wrap">
           <div className="faces">
@@ -64,22 +81,22 @@ const MiniFig = () => {
           </div>
         </div>
       </div>
-      <div className="upper-body">
-        <div className="torso" />
-        <div className="arm right">
-          <div className="hand right" />
-        </div>
-        <div className="arm left">
-          <div className="hand left" />
-        </div>
-      </div>
+      <UpperBody>
+        <Torso />
+        <RightArm>
+          <Hand />
+        </RightArm>
+        <LeftArm>
+          <Hand />
+        </LeftArm>
+      </UpperBody>
       <div className="lower-body">
         <div className="waist" />
         <div className="crotch" />
         <div className="leg right" />
         <div className="leg left" />
       </div>
-    </div>
+    </MiniFigure>
   );
 };
 
