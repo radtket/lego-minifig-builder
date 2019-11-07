@@ -1,8 +1,10 @@
 import React from "react";
 
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Button, Fieldset, Legend } from "./FormElements";
 import InputSlider from "./InputSlider";
+import { defaultSliderValues, inputConfig } from "../utils/constants";
 
 const Controls = styled.aside`
   background-color: rgba(220, 220, 220, 0.5);
@@ -20,26 +22,6 @@ const Controls = styled.aside`
     margin-bottom: 0.5rem;
   }
 `;
-
-const inputConfig = {
-  expression: {
-    max: 500,
-    min: 0,
-    step: 100,
-  },
-  hue: {
-    max: 360,
-    min: 0,
-  },
-  saturation: {
-    max: 100,
-    min: 0,
-  },
-  lightness: {
-    max: 90,
-    min: 0,
-  },
-};
 
 const Sidebar = ({ values, setValues }) => {
   const onChange = ({ target: { name, value } }) => {
@@ -97,8 +79,58 @@ const Sidebar = ({ values, setValues }) => {
           label="Saturation"
         />
       </Fieldset>
+
+      <Fieldset>
+        <Legend>Lower Body</Legend>
+        <InputSlider
+          id="upperHue"
+          inputProps={{
+            ...inputConfig.hue,
+            value: values.lowerHue,
+            onChange,
+          }}
+          label="Hue"
+        />
+        <InputSlider
+          id="lowerSaturation"
+          inputProps={{
+            ...inputConfig.saturation,
+            value: values.lowerSaturation,
+            onChange,
+          }}
+          label="Saturation"
+        />
+        <InputSlider
+          id="lowerLightness"
+          inputProps={{
+            ...inputConfig.lightness,
+            value: values.lowerLightness,
+            onChange,
+          }}
+          label="Saturation"
+        />
+      </Fieldset>
     </Controls>
   );
+};
+
+Sidebar.propTypes = {
+  values: PropTypes.shape({
+    expression: PropTypes.number,
+    upperHue: PropTypes.number,
+    upperSaturation: PropTypes.number,
+    upperLightness: PropTypes.number,
+    lowerHue: PropTypes.number,
+    lowerSaturation: PropTypes.number,
+    lowerLightness: PropTypes.number,
+  }),
+  setValues: PropTypes.func.isRequired,
+};
+
+Sidebar.defaultProps = {
+  values: {
+    ...defaultSliderValues,
+  },
 };
 
 export default Sidebar;

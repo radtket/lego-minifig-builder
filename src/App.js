@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
+import { defaultSliderValues } from "./utils/constants";
 
 const App = () => {
   const [values, setValues] = useState({
-    expression: 0,
-    upperHue: 200,
-    upperSaturation: 0,
-    upperLightness: 90,
+    ...defaultSliderValues,
   });
 
   return (
