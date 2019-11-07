@@ -4,6 +4,8 @@ import App from "./App";
 import Theme from "./theme";
 import * as serviceWorker from "./serviceWorker";
 
+import "typeface-montserrat";
+
 ReactDOM.render(
   <Theme>
     <App />
