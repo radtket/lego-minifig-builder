@@ -7,6 +7,7 @@ const App = () => {
   const [values, setValues] = useState({
     ...defaultSliderValues,
   });
+  const [isExploded, setIsExploded] = useState(false);
 
   return (
     <div
@@ -15,8 +16,8 @@ const App = () => {
         justifyContent: "space-between",
       }}
     >
-      <MiniFig />
-      <Sidebar {...{ values, setValues }} />
+      <MiniFig {...{ isExploded }} />
+      <Sidebar {...{ values, setValues, isExploded, setIsExploded }} />
     </div>
   );
 };

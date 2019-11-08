@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { UpperBody, Torso, RightArm, LeftArm, Hand } from "./UpperBody";
+import { LowerBody, Waist, Crotch, LeftLeg, RightLeg } from "./LowerBody";
 
 const MiniFigure = styled.div`
   height: 485px;
@@ -17,7 +18,7 @@ const MiniFigure = styled.div`
   }
 `;
 
-const MiniFig = () => {
+const MiniFig = ({ isExploded }) => {
   return (
     <MiniFigure>
       <div className="head">
@@ -90,12 +91,12 @@ const MiniFig = () => {
           <Hand />
         </LeftArm>
       </UpperBody>
-      <div className="lower-body">
-        <div className="waist" />
-        <div className="crotch" />
-        <div className="leg right" />
-        <div className="leg left" />
-      </div>
+      <LowerBody {...{ isExploded }}>
+        <Waist />
+        <Crotch />
+        <RightLeg />
+        <LeftLeg />
+      </LowerBody>
     </MiniFigure>
   );
 };

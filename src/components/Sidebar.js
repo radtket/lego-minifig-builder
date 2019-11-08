@@ -23,7 +23,7 @@ const Controls = styled.aside`
   }
 `;
 
-const Sidebar = ({ values, setValues }) => {
+const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
   const onChange = ({ target: { name, value } }) => {
     setValues(prev => ({
       ...prev,
@@ -34,7 +34,9 @@ const Sidebar = ({ values, setValues }) => {
   return (
     <Controls>
       <h2>Controls</h2>
-      <Button type="button">Explode</Button>
+      <Button onClick={() => setIsExploded(!isExploded)} type="button">
+        {isExploded ? "Rebuild" : "Explode"}
+      </Button>
       <Button type="button">Randomize</Button>
       <Fieldset>
         <Legend>Head</Legend>
