@@ -106,14 +106,12 @@ export const RightEye = styled(Eye)`
 
 export const Brow = styled.div`
   ${size("1em", "1.75em")};
+  ${position("absolute", null, null, "0.625em", "50%")}
   border: 0.25em solid transparent;
   border-bottom: none;
   border-radius: 50% 50% 0 0;
   border-top-color: currentColor;
-  bottom: 0.625em;
   color: #000;
-  left: 50%;
-  position: absolute;
   transform: translateX(-50%);
   transform-origin: 0 0;
 `;
@@ -128,13 +126,11 @@ export const RightBrow = styled(Brow)`
 
 export const Mouth = styled.div`
   ${size("1.5em", "2.5em")};
+  ${position("absolute", "3.125em", null, null, "50%")}
   border: 0.25em solid transparent;
   border-bottom-color: currentColor;
   border-radius: 50%;
   color: #000;
-  left: 50%;
-  position: absolute;
-  top: 3.125em;
   transform: translateX(-50%);
 
   &::before,
@@ -238,8 +234,7 @@ export const WorriedFace = styled(Face)`
   }
 
   ${Brow} {
-    width: 1.25em;
-    height: 0.875em;
+    ${size("0.875em", "1.25em")};
     bottom: 1.25em;
     border-top: none;
     border-bottom: 0.25em solid currentColor;
@@ -257,9 +252,8 @@ export const WorriedFace = styled(Face)`
   }
 
   ${Mouth} {
+    ${size("1.25em", "2em")};
     top: 4.5em;
-    width: 2em;
-    height: 1.25em;
     transform: translateX(-50%) rotate(-10deg) translateZ(0);
     border-top-color: currentColor;
     border-right: none;
@@ -274,9 +268,8 @@ export const FrownFace = styled(Face)`
     top: 2.625em;
 
     &::before {
+      ${size("1em", "1.25em")};
       bottom: 80%;
-      width: 1.25em;
-      height: 1em;
       border: 0.1875em solid transparent;
       border-bottom-color: currentColor;
       border-radius: 50%;
@@ -316,9 +309,8 @@ export const FrownFace = styled(Face)`
   }
 
   ${Mouth} {
+    ${size("2em", "2.75em")};
     top: 4.25em;
-    width: 2.75em;
-    height: 2em;
     margin-left: -0.125em;
     transform: translateX(-50%) rotate(-15deg) translateZ(0);
     border-top-color: currentColor;
@@ -328,15 +320,13 @@ export const FrownFace = styled(Face)`
     border-radius: 50% 50% 0 0;
 
     &::before {
+      ${size("0.625em", "0.75em")};
       top: 0.375em;
-      width: 0.75em;
-      height: 0.625em;
       margin-left: 0.125em;
       color: #000;
       border: 0.125em solid transparent;
       border-top-color: currentColor;
       border-right: none;
-      border-radius: 50%;
       border-radius: 50% 50% 0 0;
     }
   }
@@ -344,9 +334,8 @@ export const FrownFace = styled(Face)`
 
 export const SurprisedFace = styled(Face)`
   ${Eye} {
+    ${size("1.125em", "1em")};
     top: 2.4375em;
-    width: 1em;
-    height: 1.125em;
     box-shadow: inset 0 -0.125em 0 0.3125em #000;
   }
 
@@ -368,9 +357,8 @@ export const SurprisedFace = styled(Face)`
   }
 
   ${Mouth} {
+    ${size("1.625em", "3.125em")};
     top: 4em;
-    width: 3.125em;
-    height: 1.625em;
     background-color: currentColor;
     border: none;
     border-radius: 70% 70% 60% 60%/100% 100% 50% 50%;

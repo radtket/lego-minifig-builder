@@ -10,15 +10,16 @@ const App = () => {
   const [isExploded, setIsExploded] = useState(false);
 
   return (
-    <div
+    <main
       style={{
         display: "flex",
         justifyContent: "space-between",
+        height: "100vh",
       }}
     >
       <MiniFig {...{ ...values, isExploded }} />
       <Sidebar {...{ values, setValues, isExploded, setIsExploded }} />
-    </div>
+    </main>
   );
 };
 

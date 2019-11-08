@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { size } from "polished";
 
 export const Button = styled.button`
   background-color: #fff;

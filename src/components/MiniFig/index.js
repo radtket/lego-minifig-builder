@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import PropTypes from "prop-types";
 import { UpperBody, Torso, RightArm, LeftArm, Hand } from "./UpperBody";
 import { LowerBody, Waist, Crotch, LeftLeg, RightLeg } from "./LowerBody";
 import {
@@ -150,6 +150,17 @@ const MiniFig = ({
       </LowerBody>
     </MiniFigure>
   );
+};
+
+MiniFig.propTypes = {
+  isExploded: PropTypes.bool.isRequired,
+  expression: PropTypes.number.isRequired,
+  lowerHue: PropTypes.number.isRequired,
+  lowerSaturation: PropTypes.number.isRequired,
+  lowerLightness: PropTypes.number.isRequired,
+  upperHue: PropTypes.number.isRequired,
+  upperSaturation: PropTypes.number.isRequired,
+  upperLightness: PropTypes.number.isRequired,
 };
 
 export default MiniFig;
