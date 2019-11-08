@@ -3,6 +3,22 @@ import styled from "styled-components";
 
 import { UpperBody, Torso, RightArm, LeftArm, Hand } from "./UpperBody";
 import { LowerBody, Waist, Crotch, LeftLeg, RightLeg } from "./LowerBody";
+import {
+  Head,
+  FacesWrap,
+  Faces,
+  ClassicFace,
+  LeftEye,
+  RightEye,
+  Mouth,
+  LeftBrow,
+  RightBrow,
+  SmileFace,
+  WorriedFace,
+  LargeSmileFace,
+  FrownFace,
+  SurprisedFace,
+} from "./Faces";
 
 const MiniFigure = styled.div`
   height: 485px;
@@ -18,70 +34,88 @@ const MiniFigure = styled.div`
   }
 `;
 
-const MiniFig = ({ isExploded }) => {
+const MiniFig = ({ isExploded, values }) => {
+  const { expression } = values;
   return (
     <MiniFigure>
-      <div className="head">
-        <div className="faces-wrap">
-          <div className="faces">
-            <div className="face classic">
-              <div className="eye right" />
-              <div className="eye left" />
-              <div className="mouth" />
-            </div>
+      <Head
+        className="head"
+        style={{
+          transform: `translate(-50%, ${isExploded ? "-8em" : 0})`,
+        }}
+      >
+        <FacesWrap className="faces-wrap">
+          <Faces
+            className="faces"
+            style={{
+              transform: isExploded
+                ? "translateX(-500%)"
+                : `translateX(-${expression}%)`,
+            }}
+          >
+            {/* Classic Face */}
+            <ClassicFace>
+              <RightEye />
+              <LeftEye />
+              <Mouth />
+            </ClassicFace>
 
-            <div className="face smile">
-              <div className="eye right">
-                <div className="brow" />
-              </div>
-              <div className="eye left">
-                <div className="brow" />
-              </div>
-              <div className="mouth" />
-            </div>
+            {/* Smile Face */}
+            <SmileFace>
+              <RightEye>
+                <RightBrow />
+              </RightEye>
+              <LeftEye>
+                <LeftBrow />
+              </LeftEye>
+              <Mouth />
+            </SmileFace>
 
-            <div className="face large-smile">
-              <div className="eye right">
-                <div className="brow" />
-              </div>
-              <div className="eye left">
-                <div className="brow" />
-              </div>
-              <div className="mouth" />
-            </div>
+            {/* Large Smile Face */}
+            <LargeSmileFace>
+              <RightEye>
+                <RightBrow />
+              </RightEye>
+              <LeftEye>
+                <LeftBrow />
+              </LeftEye>
+              <Mouth />
+            </LargeSmileFace>
 
-            <div className="face worried">
-              <div className="eye right">
-                <div className="brow" />
-              </div>
-              <div className="eye left">
-                <div className="brow" />
-              </div>
-              <div className="mouth" />
-            </div>
+            {/* Worried Face */}
+            <WorriedFace>
+              <RightEye>
+                <RightBrow />
+              </RightEye>
+              <LeftEye>
+                <LeftBrow />
+              </LeftEye>
+              <Mouth />
+            </WorriedFace>
 
-            <div className="face frown">
-              <div className="eye right">
-                <div className="brow" />
-              </div>
-              <div className="eye left">
-                <div className="brow" />
-              </div>
-              <div className="mouth" />
-            </div>
+            {/* Frown Face */}
+            <FrownFace>
+              <RightEye>
+                <RightBrow />
+              </RightEye>
+              <LeftEye>
+                <LeftBrow />
+              </LeftEye>
+              <Mouth />
+            </FrownFace>
 
-            <div className="face surprised">
-              <div className="eye right">
-                <div className="brow" />
-              </div>
-              <div className="eye left">
-                <div className="brow" />
-              </div>
-              <div className="mouth" />
-            </div>
-          </div>
-        </div>
-      </div>
+            <SurprisedFace>
+              <RightEye>
+                <RightBrow />
+              </RightEye>
+              <LeftEye>
+                <LeftBrow />
+              </LeftEye>
+              <Mouth />
+            </SurprisedFace>
+          </Faces>
+        </FacesWrap>
+      </Head>
       <UpperBody>
         <Torso />
         <RightArm>

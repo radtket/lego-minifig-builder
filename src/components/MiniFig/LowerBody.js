@@ -6,7 +6,7 @@ export const LowerBody = styled.div`
   ${size("11.75em", "10em")}
   color: hsl(200, 0%, 90%);
   transform: ${({ isExploded }) =>
-    isExploded ? "translate(-50%, -8em)" : "translateX(-50%)"};
+    isExploded ? "translate(-50%, 8em)" : "translate(-50%, 0)"};
   transition: transform 400ms;
 
   > div {
