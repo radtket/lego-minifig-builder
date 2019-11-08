@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { theme } from "../theme";
+
+const { white, black, yellowDark, gray1, gray2 } = theme.colors;
 
 export const Button = styled.button`
-  background-color: #fff;
+  background-color: ${white};
   border-radius: 0.5em;
-  border: 1px solid #ddd;
+  border: 1px solid ${gray1};
   color: #666;
   cursor: pointer;
   font-family: inherit;
@@ -15,12 +18,12 @@ export const Button = styled.button`
   width: 100%;
 
   &:hover {
-    color: #000;
-    border-color: #ccc;
+    color: ${black};
+    border-color: ${gray2};
   }
 
   &:active {
-    background-color: #ddd;
+    background-color: ${gray1};
   }
 `;
 
@@ -62,7 +65,7 @@ export const RangeInput = styled.input`
     z-index: 10;
     width: 1.5em;
     height: 1.5em;
-    background-color: hsla(50, 90%, 50%, 1);
+    background-color: ${yellowDark};
     border-radius: 50%;
     cursor: pointer;
   }

@@ -2,12 +2,16 @@ import React from "react";
 
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { rgba } from "polished";
 import { Button, Fieldset, Legend } from "./FormElements";
 import InputSlider from "./InputSlider";
 import { defaultSliderValues, inputConfig } from "../utils/constants";
+import { theme } from "../theme";
+
+const { gray1 } = theme.colors;
 
 const Controls = styled.aside`
-  background-color: rgba(220, 220, 220, 0.5);
+  background-color: ${rgba(gray1, 0.5)};
   color: #333;
   padding: 1.5em;
   position: relative;

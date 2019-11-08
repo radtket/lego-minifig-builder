@@ -1,25 +1,23 @@
 import styled from "styled-components";
-import { position, size } from "polished";
+import { position, size, rgba } from "polished";
+import { theme } from "../../theme";
+
+const { white, black, yellowDark, red } = theme.colors;
 
 export const Head = styled.div`
   ${position("absolute", "2.25em", null, null, "50%")}
   ${size("6.25em", "7.25em")}
   background-color: currentColor;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.3),
+      ${rgba(white, 0.3)},
       transparent 20%,
       transparent 80%,
-      rgba(0, 0, 0, 0.15) 95%,
-      rgba(0, 0, 0, 0.3)
+      ${rgba(black, 0.15)} 95%,
+      ${rgba(black, 0.3)}
     ),
-    linear-gradient(
-      to right,
-      transparent 50%,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
+    linear-gradient(to right, transparent 50%, ${rgba(white, 0.2)}, transparent);
   border-radius: 1.5em;
-  color: hsla(50, 90%, 50%, 1);
+  color: ${yellowDark};
   transition: transform 400ms;
   z-index: 1;
 
@@ -33,11 +31,11 @@ export const Head = styled.div`
 
   &::before {
     ${size("1.25em", "3.5em")};
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), transparent 30%),
+    background-image: linear-gradient(${rgba(white, 0.5)}, transparent 30%),
       linear-gradient(
         to right,
         transparent 70%,
-        rgba(255, 255, 255, 0.25) 80%,
+        ${rgba(white, 0.25)} 80%,
         transparent 90%
       );
     border-radius: 0.25em 0.25em 0 0;
@@ -48,13 +46,13 @@ export const Head = styled.div`
   &::after {
     ${size("1em", "4.5em")};
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.05) 50%
+        ${rgba(black, 0.2)},
+        ${rgba(black, 0.05)} 50%
       ),
       linear-gradient(
         to right,
         transparent 70%,
-        rgba(255, 255, 255, 0.25) 80%,
+        ${rgba(white, 0.25)} 80%,
         transparent 90%
       );
     border-radius: 0 0 0.125em 0.125em;
@@ -82,13 +80,13 @@ export const Eye = styled.div`
   ${size("0.9375em", "0.75em")};
   background-color: currentColor;
   border-radius: 50%;
-  box-shadow: inset 0 -0.125em 0 0.25em #000;
-  color: #fff;
+  box-shadow: inset 0 -0.125em 0 0.25em ${black};
+  color: ${white};
   position: absolute;
   top: 2.25em;
 
   &::before {
-    color: #000;
+    color: ${black};
     content: "";
     left: 50%;
     position: absolute;
@@ -111,7 +109,7 @@ export const Brow = styled.div`
   border-bottom: none;
   border-radius: 50% 50% 0 0;
   border-top-color: currentColor;
-  color: #000;
+  color: ${black};
   transform: translateX(-50%);
   transform-origin: 0 0;
 `;
@@ -130,7 +128,7 @@ export const Mouth = styled.div`
   border: 0.25em solid transparent;
   border-bottom-color: currentColor;
   border-radius: 50%;
-  color: #000;
+  color: ${black};
   transform: translateX(-50%);
 
   &::before,
@@ -146,7 +144,7 @@ export const ClassicFace = styled(Face)`
   ${Eye} {
     top: 2.4375em;
     height: 0.75em;
-    color: #000;
+    color: ${black};
     box-shadow: none;
   }
 
@@ -159,7 +157,7 @@ export const SmileFace = styled(Face)`
   ${Eye} {
     top: 2.4375em;
     height: 0.75em;
-    color: #000;
+    color: ${black};
     box-shadow: none;
   }
 
@@ -201,17 +199,17 @@ export const LargeSmileFace = styled(Face)`
     &::before {
       ${size("2em", "4.25em")};
       top: 1.6875em;
-      color: #000;
+      color: ${black};
       border: 0.1875em solid transparent;
       border-bottom-color: currentColor;
       border-radius: 0 0 50% 50%;
-      box-shadow: 0 0.9375em 0 -0.75em #fff;
+      box-shadow: 0 0.9375em 0 -0.75em ${white};
     }
 
     &::after {
       ${size("0.375em", "1.25em")};
       top: 4.4375em;
-      color: #c00;
+      color: ${red};
       background-color: currentColor;
       border-radius: 70% 70% 70% 70%/50% 50% 100% 100%;
     }
@@ -222,7 +220,7 @@ export const WorriedFace = styled(Face)`
   ${Eye} {
     ${size("1.125em", "1em")};
     top: 2.4375em;
-    box-shadow: inset 0 -0.125em 0 0.3125em #000;
+    box-shadow: inset 0 -0.125em 0 0.3125em ${black};
   }
 
   ${RightEye} {
@@ -323,7 +321,7 @@ export const FrownFace = styled(Face)`
       ${size("0.625em", "0.75em")};
       top: 0.375em;
       margin-left: 0.125em;
-      color: #000;
+      color: ${black};
       border: 0.125em solid transparent;
       border-top-color: currentColor;
       border-right: none;
@@ -336,7 +334,7 @@ export const SurprisedFace = styled(Face)`
   ${Eye} {
     ${size("1.125em", "1em")};
     top: 2.4375em;
-    box-shadow: inset 0 -0.125em 0 0.3125em #000;
+    box-shadow: inset 0 -0.125em 0 0.3125em ${black};
   }
 
   ${Brow} {
@@ -367,7 +365,7 @@ export const SurprisedFace = styled(Face)`
     &::after {
       background-color: currentColor;
       border-radius: 70% 70% 60% 60%/100% 100% 50% 50%;
-      color: #fff;
+      color: ${white};
       height: 0.375em;
     }
 
