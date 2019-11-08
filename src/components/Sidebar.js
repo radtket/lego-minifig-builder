@@ -31,13 +31,44 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
     }));
   };
 
+  const getRandomNum = (min, max) => {
+    return Math.random() * (max - min) + min;
+  };
+
+  const randomize = () => {
+    setValues(
+      Object.entries(inputConfig).reduce((all, one) => {
+        const [key, value] = one;
+        const { min, max } = value;
+
+        return {
+          ...all,
+          [key]:
+            key !== "expression"
+              ? getRandomNum(min, max)
+              : Math.ceil((getRandomNum(0, 5) * 100) / 100) * 100,
+        };
+      }, values)
+    );
+  };
+
   return (
     <Controls>
       <h2>Controls</h2>
       <Button onClick={() => setIsExploded(!isExploded)} type="button">
         {isExploded ? "Rebuild" : "Explode"}
       </Button>
-      <Button type="button">Randomize</Button>
+      <Button onClick={randomize} type="button">
+        Randomize
+      </Button>
+      <Button
+        onClick={() => {
+          setValues({ ...defaultSliderValues });
+        }}
+        type="button"
+      >
+        Reset
+      </Button>
       <Fieldset>
         <Legend>Head</Legend>
         <InputSlider
@@ -56,7 +87,7 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
         <InputSlider
           id="upperHue"
           inputProps={{
-            ...inputConfig.hue,
+            ...inputConfig.upperHue,
             value: values.upperHue,
             onChange,
           }}
@@ -65,7 +96,7 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
         <InputSlider
           id="upperSaturation"
           inputProps={{
-            ...inputConfig.saturation,
+            ...inputConfig.upperSaturation,
             value: values.upperSaturation,
             onChange,
           }}
@@ -74,20 +105,20 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
         <InputSlider
           id="upperLightness"
           inputProps={{
-            ...inputConfig.lightness,
+            ...inputConfig.upperLightness,
             value: values.upperLightness,
             onChange,
           }}
-          label="Saturation"
+          label="Lightness"
         />
       </Fieldset>
 
       <Fieldset>
         <Legend>Lower Body</Legend>
         <InputSlider
-          id="upperHue"
+          id="lowerHue"
           inputProps={{
-            ...inputConfig.hue,
+            ...inputConfig.lowerHue,
             value: values.lowerHue,
             onChange,
           }}
@@ -96,7 +127,7 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
         <InputSlider
           id="lowerSaturation"
           inputProps={{
-            ...inputConfig.saturation,
+            ...inputConfig.lowerSaturation,
             value: values.lowerSaturation,
             onChange,
           }}
@@ -105,11 +136,11 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
         <InputSlider
           id="lowerLightness"
           inputProps={{
-            ...inputConfig.lightness,
+            ...inputConfig.lowerLightness,
             value: values.lowerLightness,
             onChange,
           }}
-          label="Saturation"
+          label="Lightness"
         />
       </Fieldset>
     </Controls>
@@ -127,6 +158,8 @@ Sidebar.propTypes = {
     lowerLightness: PropTypes.number,
   }),
   setValues: PropTypes.func.isRequired,
+  isExploded: PropTypes.bool.isRequired,
+  setIsExploded: PropTypes.func.isRequired,
 };
 
 Sidebar.defaultProps = {

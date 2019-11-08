@@ -16,7 +16,7 @@ const App = () => {
         justifyContent: "space-between",
       }}
     >
-      <MiniFig {...{ values, isExploded }} />
+      <MiniFig {...{ ...values, isExploded }} />
       <Sidebar {...{ values, setValues, isExploded, setIsExploded }} />
     </div>
   );

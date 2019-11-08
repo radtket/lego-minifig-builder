@@ -79,14 +79,13 @@ export const Face = styled.div`
 `;
 
 export const Eye = styled.div`
+  ${size("0.9375em", "0.75em")};
   background-color: currentColor;
   border-radius: 50%;
   box-shadow: inset 0 -0.125em 0 0.25em #000;
   color: #fff;
-  height: 0.9375em;
   position: absolute;
   top: 2.25em;
-  width: 0.75em;
 
   &::before {
     color: #000;
@@ -106,18 +105,17 @@ export const RightEye = styled(Eye)`
 `;
 
 export const Brow = styled.div`
+  ${size("1em", "1.75em")};
   border: 0.25em solid transparent;
   border-bottom: none;
   border-radius: 50% 50% 0 0;
   border-top-color: currentColor;
   bottom: 0.625em;
   color: #000;
-  height: 1em;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
   transform-origin: 0 0;
-  width: 1.75em;
 `;
 
 export const LeftBrow = styled(Brow)`
@@ -129,16 +127,15 @@ export const RightBrow = styled(Brow)`
 `;
 
 export const Mouth = styled.div`
+  ${size("1.5em", "2.5em")};
   border: 0.25em solid transparent;
   border-bottom-color: currentColor;
   border-radius: 50%;
   color: #000;
-  height: 1.5em;
   left: 50%;
   position: absolute;
   top: 3.125em;
   transform: translateX(-50%);
-  width: 2.5em;
 
   &::before,
   &::after {
@@ -181,9 +178,8 @@ export const LargeSmileFace = styled(Face)`
   }
 
   ${Brow} {
+    ${size("1.375em", "1.25em")};
     bottom: 0.375em;
-    width: 1.25em;
-    height: 1.375em;
     border: none;
     border-top: 0.25em solid;
     border-radius: 50% 50% 0 0;
@@ -200,17 +196,15 @@ export const LargeSmileFace = styled(Face)`
   }
 
   ${Mouth} {
+    ${size("5em", "3.125em")};
     top: 0.125em;
-    width: 3.125em;
-    height: 5em;
     border: none;
     border-bottom: 1.5em solid;
     border-radius: 0 0 70% 70%/0 0 50% 50%;
 
     &::before {
+      ${size("2em", "4.25em")};
       top: 1.6875em;
-      width: 4.25em;
-      height: 2em;
       color: #000;
       border: 0.1875em solid transparent;
       border-bottom-color: currentColor;
@@ -219,9 +213,8 @@ export const LargeSmileFace = styled(Face)`
     }
 
     &::after {
+      ${size("0.375em", "1.25em")};
       top: 4.4375em;
-      width: 1.25em;
-      height: 0.375em;
       color: #c00;
       background-color: currentColor;
       border-radius: 70% 70% 70% 70%/50% 50% 100% 100%;
@@ -231,9 +224,8 @@ export const LargeSmileFace = styled(Face)`
 
 export const WorriedFace = styled(Face)`
   ${Eye} {
+    ${size("1.125em", "1em")};
     top: 2.4375em;
-    width: 1em;
-    height: 1.125em;
     box-shadow: inset 0 -0.125em 0 0.3125em #000;
   }
 
@@ -383,22 +375,22 @@ export const SurprisedFace = styled(Face)`
     border: none;
     border-radius: 70% 70% 60% 60%/100% 100% 50% 50%;
 
-    &::before {
-      color: #fff;
+    &::before,
+    &::after {
       background-color: currentColor;
+      border-radius: 70% 70% 60% 60%/100% 100% 50% 50%;
+      color: #fff;
+      height: 0.375em;
+    }
+
+    &::before {
       top: 0.1875em;
       width: 2em;
-      height: 0.375em;
-      border-radius: 70% 70% 60% 60%/100% 100% 50% 50%;
     }
 
     &::after {
-      color: #fff;
-      background-color: currentColor;
       bottom: 0.1875em;
       width: 2.25em;
-      height: 0.375em;
-      border-radius: 70% 70% 60% 60%/100% 100% 50% 50%;
     }
   }
 `;

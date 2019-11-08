@@ -34,8 +34,16 @@ const MiniFigure = styled.div`
   }
 `;
 
-const MiniFig = ({ isExploded, values }) => {
-  const { expression } = values;
+const MiniFig = ({
+  isExploded,
+  expression,
+  lowerHue,
+  lowerSaturation,
+  lowerLightness,
+  upperHue,
+  upperSaturation,
+  upperLightness,
+}) => {
   return (
     <MiniFigure>
       <Head
@@ -116,7 +124,11 @@ const MiniFig = ({ isExploded, values }) => {
           </Faces>
         </FacesWrap>
       </Head>
-      <UpperBody>
+      <UpperBody
+        style={{
+          color: `hsl(${upperHue},${upperSaturation}%,${upperLightness}%)`,
+        }}
+      >
         <Torso />
         <RightArm>
           <Hand />
@@ -125,7 +137,12 @@ const MiniFig = ({ isExploded, values }) => {
           <Hand />
         </LeftArm>
       </UpperBody>
-      <LowerBody {...{ isExploded }}>
+      <LowerBody
+        {...{ isExploded }}
+        style={{
+          color: `hsl(${lowerHue},${lowerSaturation}%,${lowerLightness}%)`,
+        }}
+      >
         <Waist />
         <Crotch />
         <RightLeg />
