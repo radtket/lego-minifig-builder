@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { position, size, rgba } from "polished";
 import { theme } from "../../theme";
@@ -71,12 +72,12 @@ export const Faces = styled.div`
   transition: transform 400ms cubic-bezier(0, 0, 0, 1.25);
 `;
 
-export const Face = styled.div`
+const Face = styled.div`
   flex: 1 0 100%;
   position: relative;
 `;
 
-export const Eye = styled.div`
+const Eye = styled.div`
   ${size("0.9375em", "0.75em")};
   background-color: currentColor;
   border-radius: 50%;
@@ -94,15 +95,15 @@ export const Eye = styled.div`
   }
 `;
 
-export const LeftEye = styled(Eye)`
+const LeftEye = styled(Eye)`
   right: 2.25em;
 `;
 
-export const RightEye = styled(Eye)`
+const RightEye = styled(Eye)`
   left: 2.25em;
 `;
 
-export const Brow = styled.div`
+const Brow = styled.div`
   ${size("1em", "1.75em")};
   ${position("absolute", null, null, "0.625em", "50%")}
   border: 0.25em solid transparent;
@@ -114,15 +115,15 @@ export const Brow = styled.div`
   transform-origin: 0 0;
 `;
 
-export const LeftBrow = styled(Brow)`
+const LeftBrow = styled(Brow)`
   border-right: none;
 `;
 
-export const RightBrow = styled(Brow)`
+const RightBrow = styled(Brow)`
   border-left: none;
 `;
 
-export const Mouth = styled.div`
+const Mouth = styled.div`
   ${size("1.5em", "2.5em")};
   ${position("absolute", "3.125em", null, null, "50%")}
   border: 0.25em solid transparent;
@@ -140,7 +141,7 @@ export const Mouth = styled.div`
   }
 `;
 
-export const ClassicFace = styled(Face)`
+const ClassicFace = styled(Face)`
   ${Eye} {
     top: 2.4375em;
     height: 0.75em;
@@ -153,7 +154,7 @@ export const ClassicFace = styled(Face)`
   }
 `;
 
-export const SmileFace = styled(Face)`
+const SmileFace = styled(Face)`
   ${Eye} {
     top: 2.4375em;
     height: 0.75em;
@@ -166,7 +167,7 @@ export const SmileFace = styled(Face)`
   }
 `;
 
-export const LargeSmileFace = styled(Face)`
+const LargeSmileFace = styled(Face)`
   ${Eye} {
     top: 2em;
   }
@@ -216,7 +217,7 @@ export const LargeSmileFace = styled(Face)`
   }
 `;
 
-export const WorriedFace = styled(Face)`
+const WorriedFace = styled(Face)`
   ${Eye} {
     ${size("1.125em", "1em")};
     top: 2.4375em;
@@ -261,7 +262,7 @@ export const WorriedFace = styled(Face)`
   }
 `;
 
-export const FrownFace = styled(Face)`
+const FrownFace = styled(Face)`
   ${Eye} {
     top: 2.625em;
 
@@ -330,7 +331,7 @@ export const FrownFace = styled(Face)`
   }
 `;
 
-export const SurprisedFace = styled(Face)`
+const SurprisedFace = styled(Face)`
   ${Eye} {
     ${size("1.125em", "1em")};
     top: 2.4375em;
@@ -380,3 +381,68 @@ export const SurprisedFace = styled(Face)`
     }
   }
 `;
+
+export default {
+  classic: () => (
+    <ClassicFace>
+      <RightEye />
+      <LeftEye />
+      <Mouth />
+    </ClassicFace>
+  ),
+  smile: () => (
+    <SmileFace>
+      <RightEye>
+        <RightBrow />
+      </RightEye>
+      <LeftEye>
+        <LeftBrow />
+      </LeftEye>
+      <Mouth />
+    </SmileFace>
+  ),
+  smileLarge: () => (
+    <LargeSmileFace>
+      <RightEye>
+        <RightBrow />
+      </RightEye>
+      <LeftEye>
+        <LeftBrow />
+      </LeftEye>
+      <Mouth />
+    </LargeSmileFace>
+  ),
+  worried: () => (
+    <WorriedFace>
+      <RightEye>
+        <RightBrow />
+      </RightEye>
+      <LeftEye>
+        <LeftBrow />
+      </LeftEye>
+      <Mouth />
+    </WorriedFace>
+  ),
+  frown: () => (
+    <FrownFace>
+      <RightEye>
+        <RightBrow />
+      </RightEye>
+      <LeftEye>
+        <LeftBrow />
+      </LeftEye>
+      <Mouth />
+    </FrownFace>
+  ),
+  surprised: () => (
+    <SurprisedFace>
+      <RightEye>
+        <RightBrow />
+      </RightEye>
+      <LeftEye>
+        <LeftBrow />
+      </LeftEye>
+      <Mouth />
+    </SurprisedFace>
+  ),
+};

@@ -41,10 +41,7 @@ const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
 
   const randomize = () => {
     setValues(
-      Object.entries(inputConfig).reduce((all, one) => {
-        const [key, value] = one;
-        const { min, max } = value;
-
+      Object.entries(inputConfig).reduce((all, [key, { min, max }]) => {
         return {
           ...all,
           [key]:

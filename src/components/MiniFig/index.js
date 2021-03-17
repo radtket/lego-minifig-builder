@@ -3,22 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { UpperBody, Torso, RightArm, LeftArm, Hand } from "./UpperBody";
 import { LowerBody, Waist, Crotch, LeftLeg, RightLeg } from "./LowerBody";
-import {
-  Head,
-  FacesWrap,
-  Faces,
-  ClassicFace,
-  LeftEye,
-  RightEye,
-  Mouth,
-  LeftBrow,
-  RightBrow,
-  SmileFace,
-  WorriedFace,
-  LargeSmileFace,
-  FrownFace,
-  SurprisedFace,
-} from "./Faces";
+import FACES, { Head, FacesWrap, Faces } from "./Faces";
 
 const MiniFigure = styled.div`
   height: 485px;
@@ -61,66 +46,9 @@ const MiniFig = ({
                 : `translateX(-${expression}%)`,
             }}
           >
-            {/* Classic Face */}
-            <ClassicFace>
-              <RightEye />
-              <LeftEye />
-              <Mouth />
-            </ClassicFace>
-
-            {/* Smile Face */}
-            <SmileFace>
-              <RightEye>
-                <RightBrow />
-              </RightEye>
-              <LeftEye>
-                <LeftBrow />
-              </LeftEye>
-              <Mouth />
-            </SmileFace>
-
-            {/* Large Smile Face */}
-            <LargeSmileFace>
-              <RightEye>
-                <RightBrow />
-              </RightEye>
-              <LeftEye>
-                <LeftBrow />
-              </LeftEye>
-              <Mouth />
-            </LargeSmileFace>
-
-            {/* Worried Face */}
-            <WorriedFace>
-              <RightEye>
-                <RightBrow />
-              </RightEye>
-              <LeftEye>
-                <LeftBrow />
-              </LeftEye>
-              <Mouth />
-            </WorriedFace>
-
-            {/* Frown Face */}
-            <FrownFace>
-              <RightEye>
-                <RightBrow />
-              </RightEye>
-              <LeftEye>
-                <LeftBrow />
-              </LeftEye>
-              <Mouth />
-            </FrownFace>
-
-            <SurprisedFace>
-              <RightEye>
-                <RightBrow />
-              </RightEye>
-              <LeftEye>
-                <LeftBrow />
-              </LeftEye>
-              <Mouth />
-            </SurprisedFace>
+            {Object.entries(FACES).map(([key, Face]) => (
+              <Face {...{ key }} />
+            ))}
           </Faces>
         </FacesWrap>
       </Head>
