@@ -21,14 +21,12 @@ export const theme = {
   },
 };
 
-const Theme = ({ children }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
-  );
-};
+const Theme = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    {children}
+  </ThemeProvider>
+);
 
 Theme.propTypes = {
   children: PropTypes.node.isRequired,

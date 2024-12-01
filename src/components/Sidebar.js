@@ -29,27 +29,26 @@ const Controls = styled.aside`
 
 const Sidebar = ({ values, setValues, isExploded, setIsExploded }) => {
   const onChange = ({ target: { name, value } }) => {
-    setValues(prev => ({
+    setValues((prev) => ({
       ...prev,
       [name]: parseInt(value, 10),
     }));
   };
 
-  const getRandomNum = (min, max) => {
-    return Math.random() * (max - min) + min;
-  };
+  const getRandomNum = (min, max) => Math.random() * (max - min) + min;
 
   const randomize = () => {
     setValues(
-      Object.entries(inputConfig).reduce((all, [key, { min, max }]) => {
-        return {
+      Object.entries(inputConfig).reduce(
+        (all, [key, { min, max }]) => ({
           ...all,
           [key]:
             key !== "expression"
               ? getRandomNum(min, max)
               : Math.ceil((getRandomNum(0, 5) * 100) / 100) * 100,
-        };
-      }, values)
+        }),
+        values
+      )
     );
   };
 

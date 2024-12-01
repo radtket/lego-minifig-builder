@@ -3,28 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^6.2.0",
+    "@babel/core": "^7.26.0",
     "polished": "^3.4.2",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "^5.0.1",
-    "styled-components": "^4.4.0",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.1",
     "styled-normalize": "^8.0.6",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "typography": "^0.16.17",
+    "web-vitals": "^1.1.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.18.2"
+    "gh-pages": "^6.2.0",
+    "prettier": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,7 +35,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint src/**/*.js --fix"
   },
   "browserslist": {
     "production": [

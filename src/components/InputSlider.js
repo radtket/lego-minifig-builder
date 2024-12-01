@@ -2,14 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Label, RangeInput } from "./FormElements";
 
-const InputSlider = ({ label, id, inputProps }) => {
-  return (
-    <Label htmlFor={id}>
-      {label}
-      <RangeInput id={id} name={id} type="range" {...inputProps} />
-    </Label>
-  );
-};
+const InputSlider = ({ label, id, inputProps }) => (
+  <Label htmlFor={id}>
+    {label}
+    <RangeInput id={id} name={id} type="range" {...inputProps} />
+  </Label>
+);
 
 InputSlider.propTypes = {
   label: PropTypes.string.isRequired,
