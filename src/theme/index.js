@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
@@ -27,6 +28,10 @@ const Theme = ({ children }) => {
       {children}
     </ThemeProvider>
   );
+};
+
+Theme.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Theme;
