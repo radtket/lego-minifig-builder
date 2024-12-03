@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/static/js/main.ba3ac52a.chunk.js",
-    "main.js.map": "/static/js/main.ba3ac52a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.50cc7554.js",
-    "runtime-main.js.map": "/static/js/runtime-main.50cc7554.js.map",
-    "static/css/2.04f68b06.chunk.css": "/static/css/2.04f68b06.chunk.css",
-    "static/js/2.8c9d007c.chunk.js": "/static/js/2.8c9d007c.chunk.js",
-    "static/js/2.8c9d007c.chunk.js.map": "/static/js/2.8c9d007c.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.04f68b06.chunk.css.map": "/static/css/2.04f68b06.chunk.css.map",
-    "static/js/2.8c9d007c.chunk.js.LICENSE.txt": "/static/js/2.8c9d007c.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/montserrat-latin-900italic.efcaa0f6.woff"
+    "main.js": "/lego-minifig-builder/static/js/main.9a31ba13.chunk.js",
+    "main.js.map": "/lego-minifig-builder/static/js/main.9a31ba13.chunk.js.map",
+    "runtime-main.js": "/lego-minifig-builder/static/js/runtime-main.c875fc0b.js",
+    "runtime-main.js.map": "/lego-minifig-builder/static/js/runtime-main.c875fc0b.js.map",
+    "static/css/2.09b44c0d.chunk.css": "/lego-minifig-builder/static/css/2.09b44c0d.chunk.css",
+    "static/js/2.066f8ca4.chunk.js": "/lego-minifig-builder/static/js/2.066f8ca4.chunk.js",
+    "static/js/2.066f8ca4.chunk.js.map": "/lego-minifig-builder/static/js/2.066f8ca4.chunk.js.map",
+    "index.html": "/lego-minifig-builder/index.html",
+    "static/css/2.09b44c0d.chunk.css.map": "/lego-minifig-builder/static/css/2.09b44c0d.chunk.css.map",
+    "static/js/2.066f8ca4.chunk.js.LICENSE.txt": "/lego-minifig-builder/static/js/2.066f8ca4.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/lego-minifig-builder/static/media/montserrat-latin-900italic.efcaa0f6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.50cc7554.js",
-    "static/css/2.04f68b06.chunk.css",
-    "static/js/2.8c9d007c.chunk.js",
-    "static/js/main.ba3ac52a.chunk.js"
+    "static/js/runtime-main.c875fc0b.js",
+    "static/css/2.09b44c0d.chunk.css",
+    "static/js/2.066f8ca4.chunk.js",
+    "static/js/main.9a31ba13.chunk.js"
   ]
 }
