@@ -15,6 +15,7 @@
     "typography": "^0.16.17",
     "web-vitals": "^1.1.2"
   },
+  "homepage": "https://radtket.github.io/lego-minifig-builder",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-eslint": "^10.1.0",
